@@ -1,0 +1,38 @@
+# React Dumb Modal
+A simpler modal. A modal that is not self-aware.
+```js
+var Modal = require('react-dumb-modal')
+<Modal dismiss={function(){/* handle the dismiss here */}} />
+```
+Dumb Modals are always visible, hence being "dumb". Consequently you will need to control the visibility of the modal from the parent component. By moving all of the state out of the child component, it becomes easier to reason with. The same goes for any modal animations.
+
+## Usage
+See props in the usage example below:
+```js
+<Modal
+  dismiss={function(){}}
+  overlayStyle={{background: 'rgba(0,0,0,.5)'}}
+  overlayClassName='overlay' //if you prefer to use css styling set a className here
+  modalStyle={{background: 'white'}}
+  modalClassName='modal' //className for the actual modal box
+  unstyled={true} //if true no default styles will be included
+  />
+```
+
+## Practical Example
+```js
+var React = require('react')
+var Modal = require('react-dumb-modal')
+
+var Page = React.createClass({
+  toggleModal: function() {
+    this.setState({showModal: !this.state.showModal})
+  },
+  render: function() {
+    return(
+      <div>
+        {this.state.authModal ? <Modal dismiss={this.toggleModal} /> : ''}
+      </div>
+    )
+})
+```
