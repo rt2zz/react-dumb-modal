@@ -6,6 +6,8 @@ var Modal = require('react-dumb-modal')
 ```
 Dumb Modals are always visible, hence being "dumb". Consequently you will need to control the visibility of the modal from the parent component. By moving all of the state out of the child component, it becomes easier to reason with. The same goes for any modal animations.
 
+**note:** the dismiss prop is a function that will be called when a user presses escape or clicks off of the modal. Assuming you want to allow the user to dismiss the modal, you should implement some logic here that toggle off the modal (either by removing it altogether or changing the style).
+
 ## Usage
 See props in the usage example below:
 ```js
