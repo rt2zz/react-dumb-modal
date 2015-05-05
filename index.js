@@ -22,7 +22,7 @@ var styles = {
 
 module.exports = React.createClass({
   propTypes: {
-    dismiss: React.PropTypes.func.isRequired,
+    dismiss: React.PropTypes.func,
     unstyled: React.PropTypes.bool
   },
 
