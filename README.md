@@ -33,7 +33,7 @@ var Page = React.createClass({
   render: function() {
     return(
       <div>
-        {this.state.authModal ? <Modal dismiss={this.toggleModal} /> : ''}
+        {this.state.showModal ? <Modal dismiss={this.toggleModal} /> : ''}
       </div>
     )
 })
