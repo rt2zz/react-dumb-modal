@@ -23,17 +23,18 @@ See props in the usage example below:
 
 ## Practical Example
 ```js
-var React = require('react')
-var Modal = require('react-dumb-modal')
+import React, { Component } from 'react'
+import Modal from 'react-dumb-modal'
 
-var Page = React.createClass({
-  toggleModal: function() {
+class Page extends Component {
+  toggleModal = () => {
     this.setState({showModal: !this.state.showModal})
-  },
-  render: function() {
+  }
+
+  render() {
     return(
       <div>
-        {this.state.showModal ? <Modal dismiss={this.toggleModal} /> : ''}
+        {this.state.showModal ? <Modal dismiss={this.toggleModal} /> : null}
       </div>
     )
 })
