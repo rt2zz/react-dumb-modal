@@ -56,8 +56,8 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      React.DOM.div({ className: this.props.overlayClassName, style: this.unstyled ? null : this.props.overlayStyle, onClick: this.props.dismiss},
-        React.DOM.div({ className: this.props.modalClassName, style: this.unstyled ? null : this.props.modalStyle, onClick: this.doNotPropogate},
+      React.DOM.div({ className: this.props.overlayClassName, style: this.props.unstyled ? null : this.props.overlayStyle, onClick: this.props.dismiss},
+        React.DOM.div({ className: this.props.modalClassName, style: this.props.unstyled ? null : this.props.modalStyle, onClick: this.doNotPropogate},
           this.props.children
         )
       )
