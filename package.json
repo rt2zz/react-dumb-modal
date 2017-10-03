@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/rt2zz/react-dumb-modal/issues"
   },
-  "homepage": "https://github.com/rt2zz/react-dumb-modal"
+  "homepage": "https://github.com/rt2zz/react-dumb-modal",
+  "dependencies": {
+    "create-react-class": "^15.6.2",
+    "prop-types": "^15.6.0",
+    "react-dom-factories": "^1.0.2"
+  }
 }

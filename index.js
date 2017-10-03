@@ -1,4 +1,7 @@
 var React = require('react')
+const createReactClass = require('create-react-class')
+const PropTypes = require('prop-types')
+const ReactDOM = require('react-dom-factories')
 
 var styles = {
   modal: {
@@ -20,10 +23,10 @@ var styles = {
   }
 }
 
-module.exports = React.createClass({
+module.exports = createReactClass({
   propTypes: {
-    dismiss: React.PropTypes.func,
-    unstyled: React.PropTypes.bool
+    dismiss: PropTypes.func,
+    unstyled: PropTypes.bool
   },
 
   getDefaultProps: function () {
@@ -56,8 +59,8 @@ module.exports = React.createClass({
 
   render: function () {
     return (
-      React.DOM.div({ className: this.props.overlayClassName, style: this.props.unstyled ? null : this.props.overlayStyle, onClick: this.props.dismiss},
-        React.DOM.div({ className: this.props.modalClassName, style: this.props.unstyled ? null : this.props.modalStyle, onClick: this.doNotPropogate},
+      ReactDOM.div({ className: this.props.overlayClassName, style: this.props.unstyled ? null : this.props.overlayStyle, onClick: this.props.dismiss},
+        ReactDOM.div({ className: this.props.modalClassName, style: this.props.unstyled ? null : this.props.modalStyle, onClick: this.doNotPropogate},
           this.props.children
         )
       )
